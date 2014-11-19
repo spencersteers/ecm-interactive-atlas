@@ -5,7 +5,7 @@
 {{else}}
   <ul class="item-list">
     <li>
-      {{#link-to 'tissues'}}
+      {{#link-to 'tissues' (query-params tissue=defaultQueryParam)}}
         All
       {{/link-to}}
   {{#each tissue in model}}

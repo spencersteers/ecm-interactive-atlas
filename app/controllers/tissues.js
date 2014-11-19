@@ -14,4 +14,5 @@ export default Ember.ArrayController.extend({
   showDiagram: true,
   isDiagram: true,
   isList: false,
+  defaultQueryParam: null,
 });
