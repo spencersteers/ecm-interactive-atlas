@@ -10,7 +10,6 @@ export default Ember.ArrayController.extend({
     // var tissue = this.get('tissue') ? this.get('tissue') : 'all';
     // console.log(tissue);
     this.get('proteins').forEach(function(item) {
-      console.log(item.get('averageTissueWeightNorms'));
       data.push({'label': item.get('proteinName'),
                  'value': item.get('averageTissueWeightNorms')[selected_tissue.toLowerCase()]});
     });
