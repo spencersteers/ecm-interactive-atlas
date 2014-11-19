@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-12 proteins-header" >
+    <span>Proteins: {{model.selected_tissue}}</span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+  <h3>Tissue Weight Norms</h3>
+    {{horizontal-bar-chart data=tissueWeightNormData selectedSeedColor=seed_color.green}}
+  </div>
+</div>
+
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <h3>Proteins</h3>
+    <ul class="item-list">
+      {{#each protein in model.proteins}}
+        <li>
+          {{#link-to 'protein' this}}
+            <strong>{{protein.proteinName}}</strong>
+            <div class="text-muted">{{protein.sequence}}</div>
+            <div>{{protein.averageTissueWeightNorm}}</div>
+          {{/link-to}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

@@ -6,6 +6,12 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('explore', function() {
+    this.resource('proteins', function() {
+      this.resource('protein', { path: '/:protein_id' });
+    });
+    this.resource('tissues');
+  });
 });
 
 export default Router;

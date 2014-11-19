@@ -16,6 +16,16 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-eval' http://maxcdn.bootstrapcdn.com",
+      'font-src': "'self' http://maxcdn.bootstrapcdn.com",
+      'connect-src': "'self' http://127.0.0.1:8000",
+      'img-src': "'self'",
+      'style-src': "'self' 'unsafe-inline' http://maxcdn.bootstrapcdn.com",
+      'media-src': "'self'"
     }
   };
 

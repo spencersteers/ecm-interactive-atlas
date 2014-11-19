@@ -4,9 +4,13 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
 
+
 // Use `app.import` to add additional libraries to the generated
 // output files.
-//
+app.import('bower_components/d3/d3.js');
+app.import('bower_components/lodash/dist/lodash.js');
+app.import('bower_components/ember-charts/dist/ember-charts.js');
+app.import('bower_components/ember-charts/dist/ember-charts.css');
 // If you need to use different assets in different
 // environments, specify an object as the first parameter. That
 // object's keys should be the environment name and the values

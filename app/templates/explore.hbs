@@ -1,0 +1,17 @@
+<div class="sidebar">
+  <div class="tab-wrap">
+    <ul class="toggle-tabs">
+      <li>
+        {{#link-to 'tissues'}}Rattus{{/link-to}}
+      </li>
+      <li>
+        {{!-- {{#link-to 'explore.human'}}Human{{/link-to}} --}}
+        <a href="/explore/tissues">Human</a>
+      </li>
+    </ul>
+  </div>
+  {{outlet}}
+</div>
+<div style="margin-left:515px;">
+  {{render 'proteins' filteredProteins}}
+</div>

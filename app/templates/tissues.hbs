@@ -1,0 +1,29 @@
+{{#if showDiagram}}
+  <div class="sidebar-padding">
+    <img width="100%" style="padding-right:23px; padding-top:10px;"src="/assets/images/rat.jpg">
+  </div>
+{{else}}
+  <ul class="item-list">
+    <li>
+      {{#link-to 'tissues'}}
+        All
+      {{/link-to}}
+  {{#each tissue in model}}
+    <li>
+      {{#link-to 'tissues' (query-params tissue=tissue.name)}}
+        {{tissue.name}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+  </ul>
+{{/if}}
+<div class="bottom">
+  <ul class="toggle-tabs dark">
+    <li>
+      <a {{action "toggleDisplay" on="click"}} {{bind-attr class="isDiagram:active"}}>Diagram</a>
+    </li>
+    <li>
+      <a {{action "toggleDisplay" on="click"}} {{bind-attr class="isList:active"}}>List</a>
+    </li>
+  </ul>
+</div>
