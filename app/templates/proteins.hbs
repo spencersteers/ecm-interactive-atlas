@@ -17,11 +17,11 @@
     <ul class="item-list">
       {{#each protein in model.proteins}}
         <li>
-          {{#link-to 'protein' this}}
+          <a href="#">
             <strong>{{protein.proteinName}}</strong>
             <div class="text-muted">{{protein.sequence}}</div>
             <div>{{protein.averageTissueWeightNorm}}</div>
-          {{/link-to}}
+          </a>
         </li>
       {{/each}}
     </ul>
