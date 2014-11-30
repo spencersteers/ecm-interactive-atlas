@@ -7,10 +7,11 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('explore', function() {
-    this.resource('proteins', function() {
-      this.resource('protein', { path: '/:protein_id' });
-    });
-    this.resource('tissues');
+    // this.resource('proteins', function() {
+    //   this.resource('protein', { path: '/:protein_id' });
+    // });
+    // this.resource('tissues');
+    this.route("tissue", { path: "/:tissue_id" });
   });
 });
 

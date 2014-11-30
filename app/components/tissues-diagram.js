@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.ArrayController.extend({
+export default Ember.Component.extend({
   actions: {
     toggleDisplay: function() {
       var isShowing = this.get('showDiagram');

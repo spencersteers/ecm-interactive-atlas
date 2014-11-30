@@ -1,27 +1,27 @@
 import Ember from 'ember';
 
-export default Ember.ArrayController.extend({
+export default Ember.Controller.extend({
   queryParams: ['tissue'],
   tissue: null,
+  proteins: [],
+  tissues: [],
 
-  filteredProteins: function() {
-    var tissue = this.get('tissue');
-    var proteins = this.get('model');
+  proteinsInQueryTissue: function() {
     var data = {};
-    if (tissue) {
-      data['selected_tissue'] = tissue;
-
-      data['proteins'] = proteins.filter(function(item) {
-        return item.isFoundInTissue(tissue);
+    if (this.tissue) {
+      data['selected_tissue'] = this.tissue;
+      data['proteins'] = this.proteins.filter(function(item) {
+        return item.isFoundInTissue(this.tissue);
       });
     } else {
       data['selected_tissue'] = 'all';
-      data['proteins'] = proteins;
+      data['proteins'] = this.proteins;
     }
 
     return Ember.ArrayProxy.create({
       proteins: data['proteins'],
       selected_tissue: data['selected_tissue']
     });
-  }.property('model', 'tissue')
+  }.property('proteins', 'tissue')
+
 });

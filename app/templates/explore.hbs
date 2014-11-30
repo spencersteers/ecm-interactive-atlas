@@ -2,7 +2,7 @@
   <div class="tab-wrap">
     <ul class="toggle-tabs">
       <li>
-        {{#link-to 'tissues'}}Rattus{{/link-to}}
+        {{#link-to 'explore'}}Rattus{{/link-to}}
       </li>
       <li>
         {{!-- {{#link-to 'explore.human'}}Human{{/link-to}} --}}
@@ -10,8 +10,10 @@
       </li>
     </ul>
   </div>
-  {{outlet}}
+  {{tissues-diagram tissueList=tissues activeTissue=tissue}}
 </div>
 <div style="margin-left:515px;">
-  {{render 'proteins' filteredProteins}}
+  <div class="outlet">
+  {{outlet}}
+  </div>
 </div>

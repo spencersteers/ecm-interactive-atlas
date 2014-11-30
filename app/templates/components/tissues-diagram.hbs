@@ -5,13 +5,14 @@
 {{else}}
   <ul class="item-list">
     <li>
-      {{#link-to 'tissues' (query-params tissue=defaultQueryParam)}}
+      {{#link-to 'explore.index'}}
         All
       {{/link-to}}
-  {{#each tissue in model}}
+    </li>
+  {{#each t in tissueList}}
     <li>
-      {{#link-to 'tissues' (query-params tissue=tissue.name)}}
-        {{tissue.name}}
+      {{#link-to 'explore.tissue' t}}
+        {{t.name}}
       {{/link-to}}
     </li>
   {{/each}}
