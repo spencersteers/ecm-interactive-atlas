@@ -2,7 +2,16 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-var app = new EmberApp();
+var app = new EmberApp({
+
+  sassOptions: {
+    includePaths: [
+      'bower_components/bourbon/dist',
+      'bower_components/neat/app/assets/stylesheets',
+      'bower_components/font-awesome/scss',
+    ]
+  }
+});
 
 
 // Use `app.import` to add additional libraries to the generated
@@ -11,6 +20,19 @@ app.import('bower_components/d3/d3.js');
 app.import('bower_components/lodash/dist/lodash.js');
 app.import('bower_components/ember-charts/dist/ember-charts.js');
 app.import('bower_components/ember-charts/dist/ember-charts.css');
+
+app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf', {
+  destDir: 'assets/fonts'
+});
+app.import('bower_components/font-awesome/fonts/fontawesome-webfont.eot', {
+  destDir: 'assets/fonts'
+});
+app.import('bower_components/font-awesome/fonts/fontawesome-webfont.svg', {
+  destDir: 'assets/fonts'
+});
+app.import('bower_components/font-awesome/fonts/fontawesome-webfont.woff', {
+  destDir: 'assets/fonts'
+});
 // If you need to use different assets in different
 // environments, specify an object as the first parameter. That
 // object's keys should be the environment name and the values

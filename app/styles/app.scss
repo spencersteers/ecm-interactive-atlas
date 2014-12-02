@@ -1,3 +1,70 @@
+@import "bourbon";
+@import "grid-settings";
+@import "neat";
+
+
+$ecm-green: #5BB75B;
+$left-nav-size: 450px;
+$left-nav-color: white;
+$base-body-color: whitesmoke;
+$nav-border-color: #ededed;
+
+$nav-height: 70px;
+@import "left-nav";
+@import "main";
+@import "main-navbar";
+@import "toggle-tabs";
+
+
+$fa-font-path: "/assets/fonts" !default;
+@import "font-awesome";
+@import "explore";
+@import "explore-tissue-diagram";
+
+@import "front";
+
+$card-padding: 15px;
+.card {
+  background-color: white;
+  border: 0px solid $nav-border-color;
+
+  border-radius: 2px;
+  margin-top: 20px;
+
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+
+  header {
+    border-bottom: 1px solid $nav-border-color;
+    font-size: 28px;
+    color: #333;
+    padding: $card-padding;
+  }
+
+  section {
+    padding: $card-padding;
+  }
+}
+
+.navbar-default {
+  background-color: $ecm-green!important;
+  border-color: $nav-border-color!important;
+
+  .navbar-nav > li > a {
+    color:  darken(white, 3%)!important;
+    border-bottom: 2px solid $ecm-green;
+    &:hover, &.active {
+      color:  white!important;
+      border-bottom: 2px solid white;
+    }
+  }
+  .navbar-brand {
+    color: white!important;
+  }
+
+}
+
 /*!
  * Bootstrap v3.1.1 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
@@ -8,10 +75,8 @@
 
 html, body {
   margin: 0;
-}
-
-body {
-  padding-top: 50px;
+  padding: 0;
+  background-color: whitesmoke;
 }
 
 .sidebar {
@@ -34,23 +99,6 @@ body {
 
 }
 
-.toggle-tabs.dark {
-  border: 1px solid #2E2E2E;
-  background: white;
-}
-.toggle-tabs.dark li .active {
-  color: white;
-  background: #2E2E2E;
-}
-
-.toggle-tabs.dark li a {
-  color: #2E2E2E;
-  cursor: pointer;
-}
-
-.toggle-tabs.dark li:first-child a {
-  border-right: 1px solid #2E2E2E;
-}
 
 .bottom {
   position: absolute;
@@ -59,44 +107,7 @@ body {
 }
 
 
-.toggle-tabs {
-  width: 100%;
-  display: inline-block;
-  margin-left: 0;
-  margin-bottom: 0;
-  border-radius: 4px;
-  padding: 0;
-  list-style: none;
-  display: table;
-  border: 1px solid #5BB75B;
-  background: white;
-}
 
-.toggle-tabs li {
-  display: table-cell;
-  width: 1%;
-  float: none;
-}
-
-.toggle-tabs li a {
-  text-align: center;
-  display: block;
-  padding: 7px 14px;
-  font-size: 14px;
-  color: #5BB75B;
-  text-decoration: none;
-}
-
-.toggle-tabs li .active {
-  color: white;
-  background: #5BB75B;
-}
-
-.toggle-tabs li:first-child a {
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-right: 1px solid #5BB75B;
-}
 
 ul {
   list-style: none;
@@ -105,31 +116,39 @@ ul {
 }
 
 .item-list {
-  margin-top: 15px;
-}
+  li {
+    font-size: 18px;
+    padding: 5px 0px;
+    position: relative;
+    a {
+      padding: 3px;
+      color: #333;
+      line-height: 18px;
+      text-align: left;
 
-.item-list li {
-  font-size: 24px;
-}
-.item-list li a {
-  color: #333;
-  padding: 5px 15px;
-  line-height: 30px;
-  text-align: left;
-  border: 1px solid #E8E8E8;
-  width: 100%;
-  display: block;
-  margin-bottom: -1px;
-}
+      width: 100%;
+      display: block;
+      margin-bottom: -1px;
+      border: 1px solid white;
 
-.item-list li a:hover {
-  text-decoration: none;
-  background-color: #F8F8F8;
-}
 
-.proteins-header {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  line-height: 36px;
-  padding: 15px;
-  font-size: 36px;
+      &:hover {
+        $nav-link-background-hover: #f9f9f9;
+        text-decoration: none;
+        background-color: $nav-link-background-hover;
+        border: 1px solid $nav-border-color;
+        border-radius: 2px;
+
+        .right-arrow {
+          color: $ecm-green;
+        }
+      }
+    }
+
+    .right-arrow {
+      position: absolute;
+      right: 5px;
+      top: 19px;
+    }
+  }
 }

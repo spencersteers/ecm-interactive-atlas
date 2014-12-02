@@ -3,28 +3,45 @@
     <img width="100%" style="padding-right:23px; padding-top:10px;"src="/assets/images/rat.jpg">
   </div>
 {{else}}
-  <ul class="item-list">
-    <li>
-      {{#link-to 'explore.index'}}
-        All
-      {{/link-to}}
-    </li>
-  {{#each t in tissueList}}
-    <li>
-      {{#link-to 'explore.tissue' t}}
-        {{t.name}}
-      {{/link-to}}
-    </li>
-  {{/each}}
-  </ul>
+  <nav id="explore-nav">
+    <ul>
+      <li>
+        {{#link-to 'explore.index'}}
+          All
+        {{/link-to}}
+      </li>
+    {{#each t in tissueList}}
+      <li>
+        {{#link-to 'explore.tissue' t}}
+          {{t.name}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+    </ul>
+  </nav>
 {{/if}}
-<div class="bottom">
+<footer>
   <ul class="toggle-tabs dark">
     <li>
-      <a {{action "toggleDisplay" on="click"}} {{bind-attr class="isDiagram:active"}}>Diagram</a>
+      <a {{action "toggleDisplay" on="click"}} {{bind-attr class="isDiagram:active"}}>
+        <div>
+          <i class="fa fa-lg fa-search"></i>
+        </div>
+        <div>
+          Diagram
+        </div>
+      </a>
     </li>
     <li>
-      <a {{action "toggleDisplay" on="click"}} {{bind-attr class="isList:active"}}>List</a>
+
+      <a {{action "toggleDisplay" on="click"}} {{bind-attr class="isList:active"}}>
+        <div>
+          <i class="fa fa-lg fa-list"></i>
+        </div>
+        <div>
+          List
+        </div>
+      </a>
     </li>
   </ul>
-</div>
+</footer>

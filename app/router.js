@@ -12,7 +12,10 @@ Router.map(function() {
     // });
     // this.resource('tissues');
     this.route("tissue", { path: "/:tissue_id" });
+    this.route("protein", { path: "protein/:protein_id" });
   });
+  this.route('datasets', { path: "/datasets" });
+  this.route("dataset", { path: "/datasets/1" });
 });
 
 export default Router;

@@ -1,19 +1,9 @@
-<div class="sidebar">
-  <div class="tab-wrap">
-    <ul class="toggle-tabs">
-      <li>
-        {{#link-to 'explore'}}Rattus{{/link-to}}
-      </li>
-      <li>
-        {{!-- {{#link-to 'explore.human'}}Human{{/link-to}} --}}
-        <a href="/explore/tissues">Human</a>
-      </li>
-    </ul>
-  </div>
+<div id="left-nav">
+  {{partial 'atlas/left-nav-menu'}}
+  <div style="margin-bottom: 80px;">
   {{tissues-diagram tissueList=tissues activeTissue=tissue}}
-</div>
-<div style="margin-left:515px;">
-  <div class="outlet">
-  {{outlet}}
   </div>
+</div>
+<div id="main">
+  {{outlet}}
 </div>

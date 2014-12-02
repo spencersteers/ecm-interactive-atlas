@@ -1,0 +1,78 @@
+
+#left-nav {
+  $nav-link-padding: 5px 30px;
+  $nav-link-background-hover: #f9f9f9;
+  $nav-header-color: #737373;
+  position: fixed;
+  left: 0;
+  top: 0;
+  float: left;
+  width: $left-nav-size;
+  height: 100vh;
+  z-index: 2;
+  overflow: hidden;
+  padding-bottom: 48px;
+  background: $left-nav-color;
+  border-right: solid 1px $nav-border-color;
+
+  &:hover {
+    overflow-y: auto;
+  }
+  @include transition(left, ease-in, 0.1s);
+
+  hr {
+    margin: 0 0 10px 0;
+  }
+
+  .brand {
+    text-align: center;
+    height: $nav-height;
+  }
+
+  .logo {
+    margin: 15px auto;
+  }
+
+  header {
+    display: block;
+    color: $nav-header-color;
+    text-transform: uppercase;
+    padding: $nav-link-padding;
+    font-size: 80%;
+  }
+  nav {
+    ul {
+      li {
+        position: relative;
+        a {
+          color: #333;
+          display: block;
+          padding: $nav-link-padding;
+          text-decoration: none;
+          &:hover {
+            background-color: $nav-link-background-hover;
+          }
+          &.active {
+            color: $ecm-green;
+          }
+        }
+      }
+    }
+  }
+  .active a {
+    color: #00a1ed;
+    background-color: $nav-link-background-hover;
+  }
+  .sub-1 a {
+    color: #00a1ed;
+    padding: 5px 35px;
+  }
+
+  footer {
+    width: $left-nav-size;
+    position: fixed;
+    bottom: 0;
+    background-color: #F8F8F8;
+    border-top: 1px solid $nav-border-color;
+  }
+}

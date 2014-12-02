@@ -1,0 +1,75 @@
+<nav id="main-navbar">
+  <ul>
+    <li class="title">{{proteinName}}</li>
+  </ul>
+</nav>
+
+<div id="protein-detail">
+  <section>
+    <article>
+
+      <div class="protein-about">
+        <header>About</header>
+        <section>
+          <p>
+          Fusce eleifend odio a mauris molestie, non vehicula urna mollis. Suspendisse id sollicitudin urna. Nullam aliquet congue massa, sit amet porta libero rhoncus et.
+          </p>
+          <p>
+          Quisque imperdiet, tortor vitae fermentum scelerisque, tellus turpis condimentum risus, at fringilla ex dolor at tellus. Aliquam leo tortor, tincidunt eget luctus id, volutpat in nisi. Proin porttitor bibendum diam, ut vulputate ligula lobortis non. Nullam sed pretium lorem. Quisque elementum quis ante in tincidunt. In blandit nisl consectetur sem pharetra, eget aliquam elit interdum.
+          </p>
+        </section>
+      </div>
+
+      <div class="protein-info">
+        <header>Info</header>
+        <section>
+          <table>
+            <tbody>
+              <tr>
+                <td>Gene Name</td>
+                <td>{{geneName}}</td>
+              </tr>
+              <tr>
+                <td>Sequence</td>
+                <td>{{sequence}}</td>
+              </tr>
+              <tr>
+                <td>Tissue Weight Norm (All Tissues)</td>
+                <td>{{averageTissueWeightNorms.all}}</td>
+              </tr>
+              <tr>
+                <td>Found in</td>
+                <td>
+                  <ul>
+                    {{#each t in tissues}}
+                      <li>
+                        {{#link-to 'explore.tissue' t}}
+                          {{t.name}}
+                        {{/link-to}}
+                      </li>
+                    {{/each}}
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+
+      <div class="protein-more">
+        <header>More From This Family</header>
+        <section>
+          <p>
+          Fusce eleifend odio a mauris molestie, non vehicula urna mollis. Suspendisse id sollicitudin urna. Nullam aliquet congue massa, sit amet porta libero rhoncus et.
+          </p>
+          <p>
+          Quisque imperdiet, tortor vitae fermentum scelerisque, tellus turpis condimentum risus, at fringilla ex dolor at tellus. Aliquam leo tortor, tincidunt eget luctus id, volutpat in nisi. Proin porttitor bibendum diam, ut vulputate ligula lobortis non. Nullam sed pretium lorem. Quisque elementum quis ante in tincidunt. In blandit nisl consectetur sem pharetra, eget aliquam elit interdum.
+          </p>
+        </section>
+      </div>
+
+    </article>
+
+  </section>
+</div>
+

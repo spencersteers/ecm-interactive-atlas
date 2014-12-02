@@ -1,0 +1,28 @@
+#explore-nav {
+  $nav-link-padding: 5px 30px;
+  $nav-link-background-hover: #f9f9f9;
+  $nav-header-color: #737373;
+  ul {
+    li {
+      position: relative;
+      a {
+        color: #333;
+        display: block;
+        padding: $nav-link-padding;
+        text-decoration: none;
+        font-size: 16px;
+        &:hover {
+          background-color: $nav-link-background-hover;
+        }
+        &.active {
+          color: $ecm-green;
+          border-left: 5px solid $ecm-green;
+        }
+      }
+    }
+  }
+  .active a {
+    color: #00a1ed;
+    background-color: $nav-link-background-hover;
+  }
+}

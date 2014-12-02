@@ -1,0 +1,10 @@
+#tissue-diagram-wrapper {
+  > section {
+    @include outer-container;
+
+    > article {
+    @include shift(1);
+    @include span-columns(10);
+    }
+  }
+}
