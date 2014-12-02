@@ -20,9 +20,9 @@ module.exports = function(environment) {
 
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-eval' http://maxcdn.bootstrapcdn.com https://cdn.firebase.com http://cdn.firebase.com",
+      'script-src': "'self' 'unsafe-eval' http://maxcdn.bootstrapcdn.com",
       'font-src': "'self' http://maxcdn.bootstrapcdn.com",
-      'connect-src': "'self' http://ecmatlas.herokuapp.com http://127.0.0.1:8000 https://ecm-atlas-feedback.firebaseio.com",
+      'connect-src': "'self' http://ecmatlas.herokuapp.com http://127.0.0.1:8000",
       'img-src': "'self'",
       'style-src': "'self' 'unsafe-inline' http://maxcdn.bootstrapcdn.com",
       'media-src': "'self'"
