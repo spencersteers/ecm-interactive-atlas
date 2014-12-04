@@ -8,7 +8,61 @@
         <h4 class="modal-title" id="feedbackModalLabel">Feedback</h4>
       </div>
       <div class="modal-body">
-        <p>The current page will be submitted along with your feedback. To comment about a certain page just submit the form from that page.</p>
+        <p>To provide feedback please fill out the form. You can submit this form as many times as you wish. Feedback on functionality and visual design is welcome!</p>
+        <p>Below are a list of missing features (that will be added soon!) and direct links (with descriptions) to the different pages of the site.</p>
+        <hr>
+        <h4>Missing items</h4>
+        <ul style="list-style-type: circle;margin-left:20px">
+          <li>ECM Atlas Logo</li>
+          <li>Hover mouse selection</li>
+          <li>Search page</li>
+          <li>Dataset upload form</li>
+          <p>An email will be sent as well as an update to this page when missing items are added.</p>
+        </ul>
+        <hr>
+        <h4>Things to Test</h4>
+        <ul style="list-style-type: circle;margin-left:20px">
+          <li>
+            {{#link-to 'index'}}Homepage{{/link-to}}
+            <ul style="list-style-type:square;margin-left:10px;">
+              <li>Verify the four links on the homepage work.</li>
+            </ul>
+          </li>
+          <li>
+            {{#link-to 'explore'}}Explore{{/link-to}}
+            <ul style="list-style-type:square;margin-left:10px;">
+              <li>The list of tissues shows displays proteins from that tissue along with an updated graph.</li>
+              <li>When a protein below the graph is selected the details of that protein are displayed.</li>
+              <li>The hover map of the mouse selects tissues (not implemented yet)</li>
+            </ul>
+          </li>
+          <li>
+            {{#link-to 'explore.tissue' 1}}Explore: Skin{{/link-to}}
+            <ul style="list-style-type:square;margin-left:10px;">
+              <li>Direct link to the tissue 'Skin' in the explore section.</li>
+            </ul>
+          </li>
+          <li>
+            {{#link-to 'explore.protein' 1}}Explore: Protein: Perlecan{{/link-to}}
+            <ul style="list-style-type:square;margin-left:10px;">
+              <li>Direct link to the protein 'Perlecan' in the explore section.</li>
+            </ul>
+          </li>
+          <li>
+            {{#link-to 'datasets'}}Datasets{{/link-to}}
+            <ul style="list-style-type:square;margin-left:10px;">
+              <li>Displays a table of all datasets.</li>
+              <li>Clicking on a dataset name displays the dataset items of the selected dataset.</li>
+            </ul>
+          </li>
+          <li>
+            {{#link-to 'dataset'}}Dataset: 1{{/link-to}}
+            <ul style="list-style-type:square;margin-left:10px;">
+              <li>Direct link to a dataset detail page.</li>
+            </ul>
+          </li>
+        </ul>
+        <hr>
         <form role="form" id="feedback-form">
           <div class="form-group">
             <label for="name">Name</label>
@@ -22,15 +76,6 @@
         <div class="form-group">
           <button type="submit" class="btn btn-primary" id="feedback-form-submit" data-dismiss="modal">Submit</button>
         </div>
-        <hr>
-        <h4>Pages to check out</h4>
-        <ul style="list-style-type: circle;margin-left:20px">
-          <li><a href="/">Homepage</a></li>
-          <li><a href="/explore/1">Explore: Skin</a></li>
-          <li><a href="/explore/protein/1">Explore: Protein: Perlecan</a>
-          <li><a href="/datasets">Datasets</a></li>
-          <li><a href="/datasets/1">Dataset: 1</a></li>
-        </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
