@@ -17,15 +17,17 @@
           </tr>
         </thead>
         <tbody>
+        {{#each set in content}}
           <tr>
-            <td>1</td>
+            <td>{{set.id}}</td>
             <td>
-              {{#link-to 'dataset'}}
-                ECM Atlas - Tissue Weight Norms
+              {{#link-to 'dataset' set.id}}
+                {{set.name}}
               {{/link-to}}
             </td>
-            <td>10/20/2014</td>
+            <td>{{set.insertedAt}}</td>
           </tr>
+        {{/each}}
         </tbody>
       </table>
     </section>

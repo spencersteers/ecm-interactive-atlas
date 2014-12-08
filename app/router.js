@@ -14,8 +14,9 @@ Router.map(function() {
     this.route("tissue", { path: "/:tissue_id" });
     this.route("protein", { path: "protein/:protein_id" });
   });
-  this.route('datasets', { path: "/datasets" });
-  this.route("dataset", { path: "/datasets/1" });
+  this.resource('datasets', { path: "/datasets" });
+  this.resource("dataset", { path: "/datasets/:dataset_id" });
+
 });
 
 export default Router;

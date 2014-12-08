@@ -5,6 +5,8 @@ export default DS.Model.extend({
   geneName: DS.attr('string'),
   proteinName: DS.attr('string'),
   tissues: DS.hasMany('tissue'),
+  familyName: DS.attr('string'),
+  functionalGroupName: DS.attr('string'),
   averageTissueWeightNorms: DS.attr('json'),
 
   isFoundInTissue: function(tissue) {
