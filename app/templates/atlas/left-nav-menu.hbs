@@ -1,13 +1,16 @@
 <div id="site-nav-fixed">
   <ul class="nav navbar-nav">
     <li>
+      {{#link-to 'index'}}Home{{/link-to}}
+    </li>
+    <li>
       {{#link-to 'explore'}}Explore{{/link-to}}
     </li>
     <li>
       {{#link-to 'datasets'}}Datasets{{/link-to}}
     </li>
-    {{!-- <li> --}}
-      {{!-- {{#link-to 'about'}}About{{/link-to}} --}}
-    {{!-- </li> --}}
+    <li>
+      {{#link-to 'search'}}Search{{/link-to}}
+    </li>
   </ul>
 </div>
