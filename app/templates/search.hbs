@@ -1,0 +1,97 @@
+{{partial 'atlas/header'}}
+
+<div class="container-fluid">
+  <div class="col-md-12">
+
+    <div class="card" style="margin-top:100px; padding:5px;">
+
+    <header>
+      Search
+    </header>
+    <section>
+      <form>
+        <div class="row">
+        <div class="col-md-4">
+        <div class="form-group">
+        {{input type=text class="form-control" value=searchName placeholder="Protein Name"}}
+        </div>
+
+          <div class="checkbox">
+            <label>
+              {{input type="checkbox" checked=searchSkin}}
+              Skin
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              {{input type="checkbox" checked=searchBone}}
+              Bone
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              {{input type="checkbox" checked=searchMuscle}}
+              Muscle
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              {{input type="checkbox" checked=searchTendon}}
+              Tendon
+            </label>
+          </div>
+      </div>
+      </div>
+      </form>
+    </section>
+    </div>
+
+    <div class="card" style="padding:5px;">
+
+    <header>
+      Results
+    </header>
+    <section>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td>ProteinName</td>
+            <td>Sequence</td>
+            <td>Gene</td>
+            <td>Tissues</td>
+            <td>Family</td>
+            <td>Functional Group</td>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each protein in searchResults}}
+          <tr>
+            <td>
+              {{#link-to 'explore.protein' protein}}
+                {{protein.proteinName}}
+              {{/link-to}}
+            </td>
+            <td>{{protein.sequence}}</td>
+            <td>{{protein.geneName}}</td>
+            <td>
+              <ul>
+              {{#each tissue in protein.tissues}}
+                <li>
+                {{#link-to 'explore.tissue' tissue}}
+                  {{tissue.name}}
+                {{/link-to}}
+                </li>
+              {{/each}}
+              </ul>
+            </td>
+            <td>{{protein.familyName}}</td>
+            <td>{{protein.functionalGroupName}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </section>
+
+    </div>
+  </div>
+</div>

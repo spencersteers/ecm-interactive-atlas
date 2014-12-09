@@ -20,6 +20,7 @@ Router.map(function() {
 
   this.route("about", { path: "/about" });
 
+  this.route('search');
 });
 
 export default Router;
