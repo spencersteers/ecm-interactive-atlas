@@ -35,35 +35,35 @@ export default Ember.ArrayController.extend({
       }
     }
 
-    var searchInput = this.get('searchName')
+    var searchInput = this.get('searchName');
     var regexp = new RegExp(searchInput, "i");
-    if(!searchInput || (searchInput && (0 == searchInput.length))) {
-      return true
-    } else if (-1 != model.get('proteinName').search(regexp)) {
-      return true
+    if(!searchInput || (searchInput && (0 === searchInput.length))) {
+      return true;
+    } else if (-1 !== model.get('proteinName').search(regexp)) {
+      return true;
     } else {
-      return false
+      return false;
     }
   },
 
   searchFilter: function() {
-    this.set('searchResults',this.get('content').filter(this.filterItem.bind(this)))
+    this.set('searchResults',this.get('content').filter(this.filterItem.bind(this)));
   }.observes("searchName"),
 
   observeSkin: function() {
-    this.set('searchResults',this.get('content').filter(this.filterItem.bind(this)))
+    this.set('searchResults',this.get('content').filter(this.filterItem.bind(this)));
   }.observes("searchSkin"),
 
   observeBone: function() {
-    this.set('searchResults',this.get('content').filter(this.filterItem.bind(this)))
+    this.set('searchResults',this.get('content').filter(this.filterItem.bind(this)));
   }.observes("searchBone"),
 
   observeMuscle: function() {
-    this.set('searchResults',this.get('content').filter(this.filterItem.bind(this)))
+    this.set('searchResults',this.get('content').filter(this.filterItem.bind(this)));
   }.observes("searchMuscle"),
 
   observeTendon: function() {
-    this.set('searchResults',this.get('content').filter(this.filterItem.bind(this)))
+    this.set('searchResults',this.get('content').filter(this.filterItem.bind(this)));
   }.observes("searchTendon"),
 
 });

@@ -16,6 +16,7 @@ var app = new EmberApp({
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
+app.import('bower_components/momentjs/min/moment.min.js');
 app.import('bower_components/d3/d3.js');
 app.import('bower_components/lodash/dist/lodash.js');
 app.import('bower_components/ember-charts/dist/ember-charts.js');

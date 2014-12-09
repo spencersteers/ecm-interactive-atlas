@@ -17,7 +17,7 @@
           </tr>
         </thead>
         <tbody>
-        {{#each set in content}}
+        {{#each set in content itemController="dataset"}}
           <tr>
             <td>{{set.id}}</td>
             <td>
@@ -25,7 +25,7 @@
                 {{set.name}}
               {{/link-to}}
             </td>
-            <td>{{set.insertedAt}}</td>
+            <td>{{set.formattedDate}}</td>
           </tr>
         {{/each}}
         </tbody>
