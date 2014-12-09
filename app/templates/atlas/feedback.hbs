@@ -9,16 +9,6 @@
       </div>
       <div class="modal-body">
         <p>To provide feedback please fill out the form. You can submit this form as many times as you wish. Feedback on functionality and visual design is welcome!</p>
-        <p>Below are a list of missing features (that will be added soon!) and direct links (with descriptions) to the different pages of the site.</p>
-        <hr>
-        <h4>Missing items</h4>
-        <ul style="list-style-type: circle;margin-left:20px">
-          <li>ECM Atlas Logo</li>
-          <li>Hover mouse selection</li>
-          <li>Search page</li>
-          <li>Dataset upload form</li>
-          <p>An email will be sent as well as an update to this page when missing items are added.</p>
-        </ul>
         <hr>
         <h4>Things to Test</h4>
         <ul style="list-style-type: circle;margin-left:20px">
@@ -33,7 +23,7 @@
             <ul style="list-style-type:square;margin-left:10px;">
               <li>The list of tissues shows displays proteins from that tissue along with an updated graph.</li>
               <li>When a protein below the graph is selected the details of that protein are displayed.</li>
-              <li>The hover map of the mouse selects tissues (not implemented yet)</li>
+              <li>When browsing the list the hover map of the mouse highlights to the current selection.</li>
             </ul>
           </li>
           <li>
@@ -43,9 +33,9 @@
             </ul>
           </li>
           <li>
-            {{#link-to 'explore.protein' 1}}Explore: Protein: Perlecan{{/link-to}}
+            {{#link-to 'explore.protein' 1}}Explore: Protein: Laminin Beta-1{{/link-to}}
             <ul style="list-style-type:square;margin-left:10px;">
-              <li>Direct link to the protein 'Perlecan' in the explore section.</li>
+              <li>Direct link to the protein 'Laminin Beta-1' in the explore section.</li>
             </ul>
           </li>
           <li>
@@ -56,12 +46,25 @@
             </ul>
           </li>
           <li>
-            {{#link-to 'dataset'}}Dataset: 1{{/link-to}}
+            {{#link-to 'dataset' 1}}Dataset: 1{{/link-to}}
             <ul style="list-style-type:square;margin-left:10px;">
               <li>Direct link to a dataset detail page.</li>
             </ul>
           </li>
         </ul>
+        <h4>Dataloader</h4>
+        <ul style="list-style-type: circle;margin-left:20px">
+          <li>
+            <a target="_blank" href="https://ecmatlas.herokuapp.com/datasets/upload/">Upload page</a>
+            <ul style="list-style-type:square;margin-left:10px;">
+              <li>Can drag and drop any number of files to add</li>
+              <li>Can use the add files button to add any number of files with the web browser file dialog</li>
+              <li>Clicking start uploads the file</li>
+              <li>Clicking insert parses the data and adds to database. To verify visit {{#link-to 'datasets'}}Datasets{{/link-to}}</li>
+              <li>Delete removes the file. To verify visit {{#link-to 'datasets'}}Datasets{{/link-to}}</li>
+            </ul>
+          </li>
+        <ul>
         <hr>
         <form role="form" id="feedback-form">
           <div class="form-group">

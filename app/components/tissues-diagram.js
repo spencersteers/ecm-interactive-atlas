@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  showDiagram: true,
-  isDiagram: true,
-  isList: false,
+  showDiagram: false,
+  isDiagram: false,
+  isList: true,
   defaultQueryParam: null,
 
   actions: {
