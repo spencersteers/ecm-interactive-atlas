@@ -1,5 +1,7 @@
 <div class="sidebar-padding">
-  <img width="100%" style="padding-right:23px; padding-top:10px;"src="/assets/images/rat.jpg">
+  <div style="text-align:center;">
+    <img id="explore-mouse" height="90vh" style="padding:75px 30px 0 30px; height:90vh;" src="assets/images/mouse/mouse.png">
+  </div>
 {{!-- {{#if showDiagram}} --}}
   {{!-- <div class="sidebar-padding">
     <img width="100%" style="padding-right:23px; padding-top:10px;"src="/assets/images/rat.jpg">
@@ -7,14 +9,14 @@
 {{!-- {{else}} --}}
   <nav id="explore-nav" {{bind-attr class="showDiagram:hide-left:"}}>
     <ul>
-      <li>
+      <li class="All">
         {{#link-to 'explore.index'}}
           All
           <i class="fa fa-chevron-right pull-right"></i>
         {{/link-to}}
       </li>
     {{#each t in tissueList}}
-      <li>
+      <li {{bind-attr class="t.name"}}>
         {{#link-to 'explore.tissue' t}}
           {{t.name}}
           <i class="fa fa-chevron-right pull-right"></i>

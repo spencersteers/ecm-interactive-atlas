@@ -23,7 +23,6 @@ export default Ember.Component.extend({
 
     // this.set('tissueWeightNormDataCalc', data);
 
-    console.log(data);
     return data;
   }.property('proteins', 'selectedTissue')
 });
