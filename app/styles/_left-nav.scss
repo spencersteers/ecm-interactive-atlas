@@ -29,6 +29,35 @@
     height: $nav-height;
   }
 
+  #site-nav-fixed {
+    position: fixed;
+    width: $left-nav-size;
+    height: $nav-height;
+    z-index: 10000;
+    background-color: $ecm-green;
+    ul {
+      li {
+        a {
+          color: darken(white, 3%)!important;
+          padding: 24px 15px;
+          margin-bottom: 2px;
+          font-size: 1.2em;
+          &:hover {
+            border-bottom: 2px solid white;
+            color: white !important;
+            background-color: transparent;
+            margin-bottom: -2px;
+          }
+          &.active {
+            border-bottom: 2px solid darken($ecm-green, 15%);
+            color: white !important;
+            background-color: darken($ecm-green, 10%);
+          }
+        }
+      }
+    }
+  }
+
   .logo {
     margin: 15px auto;
   }
@@ -40,15 +69,16 @@
     padding: $nav-link-padding;
     font-size: 80%;
   }
-  nav {
+  > nav {
     ul {
       li {
         position: relative;
         a {
-          color: #333;
+          color: darken(white, 50%);
           display: block;
           padding: $nav-link-padding;
           text-decoration: none;
+          font-size: 18px;
           &:hover {
             background-color: $nav-link-background-hover;
           }

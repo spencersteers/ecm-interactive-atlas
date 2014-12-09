@@ -54,9 +54,15 @@ $card-padding: 15px;
   .navbar-nav > li > a {
     color:  darken(white, 3%)!important;
     border-bottom: 2px solid $ecm-green;
-    &:hover, &.active {
-      color:  white!important;
+    &:hover {
       border-bottom: 2px solid white;
+      color: white !important;
+      margin-bottom: -2px;
+    }
+    &.active {
+      border-bottom: 2px solid darken($ecm-green, 15%);
+      color: white !important;
+      background-color: darken($ecm-green, 10%)!important;
     }
   }
   .navbar-brand {
@@ -68,6 +74,32 @@ $card-padding: 15px;
 
 header, .title, .navbar-brand {
   font-family: 'Slabo 27px', serif;
+}
+
+#about-page {
+  margin-top: 80px;
+  @include outer-container;
+
+  h1 {
+    font-size: 42px;
+    border-bottom: 1px solid #BABABA;
+  }
+  hr {
+    border-color: #BABABA;
+  }
+  p {
+    font-size: 1.15em;
+  }
+
+  article {
+    @include shift(1);
+    @include span-columns(10);
+  }
+
+  .about-link {
+    font-size: 4em;
+    text-align: center;
+  }
 }
 
 /*!

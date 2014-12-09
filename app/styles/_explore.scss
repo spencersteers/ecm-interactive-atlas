@@ -1,28 +1,47 @@
 #explore-nav {
   $nav-link-padding: 5px 30px;
-  $nav-link-background-hover: #f9f9f9;
+  $nav-background-color: rgba(50, 50, 50, 0.9);
+  // $nav-link-background-hover: darken($nav-background-color, 20%);
   $nav-header-color: #737373;
+
+  transition: left 0.25s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $nav-background-color;
+  width: 100%;
+
+  &.hide-left {
+    left: -500px;
+  }
   ul {
     li {
       position: relative;
+      border-bottom: 1px solid darken($nav-background-color, 3%);
       a {
-        color: #333;
+        color: darken(white, 10%);
         display: block;
         padding: $nav-link-padding;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 20px;
         &:hover {
-          background-color: $nav-link-background-hover;
+          color: white;
+          background-color: none;
+          i {
+            transform: translate(2px, 0);
+          }
         }
         &.active {
-          color: $ecm-green;
-          border-left: 5px solid $ecm-green;
+          color: white;
+        }
+        i {
+          margin-top: 5px;
         }
       }
     }
   }
   .active a {
-    color: #00a1ed;
-    background-color: $nav-link-background-hover;
+    color: white;
+    // background-color: $nav-link-background-hover;
   }
 }

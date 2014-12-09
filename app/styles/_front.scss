@@ -11,12 +11,27 @@ $flex-box-gutter: .4em;
 $flex-box-width: 18em;
 $flex-box-color: transparentize($base-font-color, .3);
 $flex-box-top-colors:
-  tomato,
+  lighten(#5BB75B, 10%),
   #72BFBF,
   #92B1E3,
   #E3D743,
   #CCC,
   #F6C05C;
+
+.front-wrap {
+  @include span-columns(12);
+}
+
+.intro-wrap {
+  @include span-columns(4 of 12);
+  .title {
+    font-size: 48px;
+    border-bottom: 1px solid darken($nav-border-color, 20%);
+  }
+  p {
+    font-size: 32px;
+  }
+}
 
 .flex-boxes {
   @include clearfix;
@@ -24,6 +39,7 @@ $flex-box-top-colors:
   @include justify-content(center);
   @include align-items(stretch);
   @include flex-wrap(wrap);
+
   text-align: center;
 }
 
@@ -64,22 +80,24 @@ $flex-box-top-colors:
   color: $flex-box-color;
   font-family: $serif;
   font-weight: 500;
-  font-size: 1.5em;
+  font-size: 2em;
   margin-bottom: .5em;
+
+  @extend .title;
 }
 .flex-box .flex-sub-title {
   color: $flex-box-color;
   font-family: $serif;
   font-weight: 500;
-  font-size: 1.25em;
+  font-size: 1.5em;
   margin-bottom: .5em;
 }
 
 .flex-box p {
   margin: auto;
-  font-size: 1.15em;
+  font-size: 1.5em;
   line-height: 1.5em;
-  color: transparentize($flex-box-color, .1);
+  color: #333;
 }
 
 .flex-box-big {

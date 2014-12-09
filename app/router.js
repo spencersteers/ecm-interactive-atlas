@@ -17,6 +17,9 @@ Router.map(function() {
   this.resource('datasets', { path: "/datasets" });
   this.resource("dataset", { path: "/datasets/:dataset_id" });
 
+
+  this.route("about", { path: "/about" });
+
 });
 
 export default Router;

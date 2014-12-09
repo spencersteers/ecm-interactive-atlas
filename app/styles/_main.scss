@@ -23,7 +23,7 @@ $section-margin: golden-ratio(75px, -1);
 
     > article {
       @include shift(1);
-      @include span-columns(11);
+      @include span-columns(10);
       @extend .card
     }
   }

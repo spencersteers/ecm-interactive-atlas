@@ -19,7 +19,7 @@ module.exports = function(environment) {
     },
 
     contentSecurityPolicy: {
-      'default-src': "'*'",
+      'default-src': "*",
       'script-src': "'self' 'unsafe-eval' http://maxcdn.bootstrapcdn.com http://cdn.firebase.com https://cdn.firebase.com",
       'font-src': "'self' http://fonts.googleapis.com http://fonts.gstatic.com http://maxcdn.bootstrapcdn.com",
       'connect-src': "'self' http://ecmatlas.herokuapp.com http://127.0.0.1:8000 https://*.firebaseio.com wss://*.firebaseio.com",
