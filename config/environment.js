@@ -16,13 +16,13 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      API_HOST: 'https://ecmatlas.herokuapp.com'
     },
-
     contentSecurityPolicy: {
       'default-src': "*",
       'script-src': "'self' 'unsafe-eval' http://maxcdn.bootstrapcdn.com http://cdn.firebase.com https://cdn.firebase.com",
       'font-src': "'self' http://fonts.googleapis.com http://fonts.gstatic.com http://maxcdn.bootstrapcdn.com",
-      'connect-src': "'self' http://ecmatlas.herokuapp.com http://127.0.0.1:8000 https://*.firebaseio.com wss://*.firebaseio.com",
+      'connect-src': "'self' http://ecmatlas.herokuapp.com http://0.0.0.0:5000 http://127.0.0.1:8000 https://*.firebaseio.com wss://*.firebaseio.com",
       'img-src': "'self'",
       'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://maxcdn.bootstrapcdn.com",
       'media-src': "'self'"
@@ -30,17 +30,13 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.API_HOST = 'http://0.0.0.0:5000';
   }
 
   if (environment === 'test') {
     // Testem prefers this...
     ENV.baseURL = '/';
-    ENV.locationType = 'auto';
+    ENV.locationType = 'none';
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;

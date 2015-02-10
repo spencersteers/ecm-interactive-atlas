@@ -18,7 +18,7 @@ $nav-height: 70px;
 
 
 $fa-font-path: "/assets/fonts" !default;
-@import "font-awesome";
+@import "bower_components/font-awesome/scss/font-awesome";
 @import "explore";
 @import "explore-tissue-diagram";
 

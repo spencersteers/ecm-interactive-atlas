@@ -3,12 +3,10 @@
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
-
   sassOptions: {
     includePaths: [
-      'bower_components/bourbon/dist',
+      'bower_components/bourbon/app/assets/stylesheets',
       'bower_components/neat/app/assets/stylesheets',
-      'bower_components/font-awesome/scss',
     ]
   }
 });
@@ -43,5 +41,10 @@ app.import('bower_components/font-awesome/fonts/fontawesome-webfont.woff', {
 // modules that you would like to import into your application
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
+
+// app.import('bower_components/bourbon/app/assets/stylesheets');
+
+
+// module.exports = app.toTree([appCss]);
 
 module.exports = app.toTree();

@@ -8,7 +8,6 @@ export default Ember.Component.extend({
   tissueWeightNormData: function() {
     var data  = [];
     var st = this.get('selectedTissue');
-
     this.get('proteins').forEach(function(item) {
       data.push({'label': item.get('proteinName'),
                  'value': item.get('averageTissueWeightNorms')[st.toLowerCase()]});

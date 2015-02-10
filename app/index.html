@@ -3,15 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ECM Atlas</title>
+    <title>EcmInteractiveAtlas</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="shortcut icon" href="assets/images/rev1/favicon-white.png">
     {{content-for 'head'}}
-
     <link href='//fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/ecm-interactive-atlas.css">
+
+    {{content-for 'head-footer'}}
   </head>
   <body>
     {{content-for 'body'}}
@@ -19,6 +21,8 @@
     <script src="assets/vendor.js"></script>
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="assets/ecm-interactive-atlas.js"></script>
+
+    {{content-for 'body-footer'}}
     <script src='//cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
     <script src="assets/feedback.js"></script>
     <script src="assets/mouse-hover.js"></script>
