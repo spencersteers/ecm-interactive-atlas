@@ -1,0 +1,77 @@
+$section-margin: golden-ratio(75px, -1);
+
+#main {
+  margin-left: $left-nav-size;
+  background-color: $base-body-color;
+  margin-bottom: 30px;
+  height: 100%;
+}
+
+#content {
+  @include outer-container;
+  margin-bottom: $section-margin;
+  @include clearfix;
+}
+
+.page {
+  padding: 30px 0;
+}
+
+#protein-detail {
+  > section {
+    @include outer-container;
+
+    > article {
+      @include shift(1);
+      @include span-columns(10);
+      @extend .card
+    }
+  }
+
+  .protein-about {
+    @include span-columns(5 of 11);
+  }
+  .protein-info {
+    @include span-columns(5 of 11);
+
+    table {
+      border: 1px solid lighten($nav-border-color, 5%);
+      border-radius: 3px;
+      padding: 3px;
+    }
+    tr {
+      &:nth-child(2n) {
+        background-color: darken(white, 1%);
+      }
+      td {
+        padding: 5px 0;
+        vertical-align: top;
+
+        &:first-child {
+          width: 60%;
+          font-weight: bold;
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+  .protein-more {
+
+    @include span-columns(10 of 11);
+    @include omega();
+  }
+}
+
+
+
+
+#feedback {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 8000;
+}
+
+.modal-dialog {
+  z-index: 1000000;
+}

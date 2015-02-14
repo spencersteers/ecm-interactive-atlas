@@ -1,0 +1,33 @@
+
+.toggle-tabs {
+  width: 100%;
+  display: inline-block;
+  margin-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  display: table;
+  a {
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    padding: 7px 14px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    &.active {
+      color: $ecm-green;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+
+    i {
+      margin-bottom: 5px;
+    }
+  }
+  li {
+    display: table-cell;
+    width: 1%;
+    float: none;
+  }
+}

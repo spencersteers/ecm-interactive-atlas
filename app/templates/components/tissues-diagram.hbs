@@ -1,0 +1,55 @@
+<div class="sidebar-padding">
+  <div style="text-align:center;">
+    <img id="explore-mouse" height="90vh" style="padding:75px 30px 0 30px; height:90vh;" src="assets/images/mouse/mouse.png">
+  </div>
+{{!-- {{#if showDiagram}} --}}
+  {{!-- <div class="sidebar-padding">
+    <img width="100%" style="padding-right:23px; padding-top:10px;"src="/assets/images/rat.jpg">
+  </div> --}}
+{{!-- {{else}} --}}
+  <nav id="explore-nav" {{bind-attr class="showDiagram:hide-left:"}}>
+    <ul>
+      <li class="All">
+        {{#link-to 'explore.index'}}
+          All
+          <i class="fa fa-chevron-right pull-right"></i>
+        {{/link-to}}
+      </li>
+    {{#each t in tissueList}}
+      <li {{bind-attr class="t.name"}}>
+        {{#link-to 'explore.tissue' t}}
+          {{t.name}}
+          <i class="fa fa-chevron-right pull-right"></i>
+        {{/link-to}}
+      </li>
+    {{/each}}
+    </ul>
+  </nav>
+{{!-- {{/if}} --}}
+</div>
+
+<footer>
+  <ul class="toggle-tabs dark">
+    <li>
+      <a {{action "toggleDisplay" on="click"}} {{bind-attr class="showDiagram:active"}}>
+        <div>
+          <i class="fa fa-lg fa-search"></i>
+        </div>
+        <div>
+          Diagram
+        </div>
+      </a>
+    </li>
+    <li>
+
+      <a {{action "toggleDisplay" on="click"}} {{bind-attr class="showDiagram::active"}}>
+        <div>
+          <i class="fa fa-lg fa-list"></i>
+        </div>
+        <div>
+          List
+        </div>
+      </a>
+    </li>
+  </ul>
+</footer>
