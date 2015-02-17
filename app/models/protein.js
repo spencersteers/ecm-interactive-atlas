@@ -7,6 +7,7 @@ export default DS.Model.extend({
   tissues: DS.hasMany('tissue', {async: true}),
   familyName: DS.attr('string'),
   functionalGroupName: DS.attr('string'),
+  slug: DS.attr('string'),
   averageTissueWeightNorms: DS.attr('json'),
 
   isFoundInTissue: function(tissue) {

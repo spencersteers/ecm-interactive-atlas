@@ -1,10 +1,14 @@
-#tissue-diagram-wrapper {
-  > section {
-    @include outer-container;
+$tissues-diagram-width: 500px;
 
-    > article {
-    @include shift(1);
-    @include span-columns(10);
-    }
-  }
+#tissues-diagram {
+  min-height: 100%;
+  height: 100%;
+  width: $tissues-diagram-width;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: $nav-width;
+  display: block;
+  z-index: 1;
 }

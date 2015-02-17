@@ -32,6 +32,9 @@ app.import('bower_components/font-awesome/fonts/fontawesome-webfont.svg', {
 app.import('bower_components/font-awesome/fonts/fontawesome-webfont.woff', {
   destDir: 'assets/fonts'
 });
+app.import('bower_components/font-awesome/fonts/fontawesome-webfont.woff2', {
+  destDir: 'assets/fonts'
+});
 // If you need to use different assets in different
 // environments, specify an object as the first parameter. That
 // object's keys should be the environment name and the values

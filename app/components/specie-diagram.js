@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  classNameBindings: ['isDiagram', 'isList'],
   showDiagram: false,
   isDiagram: false,
   isList: true,
@@ -19,9 +20,7 @@ export default Ember.Component.extend({
         this.set('isDiagram', true);
         this.set('isList', false);
       }
-
     }
   },
-
 
 });

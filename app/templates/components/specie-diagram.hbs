@@ -1,0 +1,55 @@
+{{#add-class-on-scroll scrollableSelector='.specie-diagram-content'}}
+<div id="specie-diagram-wrapper" class="section">
+  <div id="specie-diagram">
+    <div class="fixed-top">
+      <div class="section-header section-brand content-pad">
+        <h2>Rattus Tissues</h2>
+      </div>
+      <div class="content-pad">
+        <div class="toggle-menu">
+          <div class="pure-menu pure-menu-horizontal">
+            <ul class="pure-menu-list">
+              <li class="pure-menu-item">
+                <a {{action "toggleDisplay" on="click"}} {{bind-attr class="showDiagram:active :pure-menu-link"}}>
+                  <i class="fa fa-fw fa-pie-chart"></i>Diagram
+                </a>
+              </li>
+              <li class="pure-menu-item">
+                <a {{action "toggleDisplay" on="click"}} {{bind-attr class="showDiagram::active :pure-menu-link"}}>
+                  <i class="fa fa-fw fa-align-left"></i>All Tissues
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="specie-diagram-content scrollable-content">
+      <div class="specie-diagram-tissues">
+        <div {{bind-attr class="showDiagram:hide :specie-diagram-tissues-list :pure-menu"}}>
+          <ul class="pure-menu-list">
+            <li class="pure-menu-item all">
+              {{#link-to 'explore.tissues.all' class="pure-menu-link"}}
+                All
+                <i class="fa fa-chevron-right pull-right"></i>
+              {{/link-to}}
+            </li>
+          {{#each t in tissueList}}
+            <li {{bind-attr class=":pure-menu-item t.name"}}>
+              {{#link-to 'explore.tissues.tissue' t.slug t.id class="pure-menu-link"}}
+                {{t.name}}
+                <i class="fa fa-chevron-right pull-right"></i>
+              {{/link-to}}
+            </li>
+          {{/each}}
+          </ul>
+        </div>
+      </div>
+      <div class="specie-diagram-diagram">
+        <img id="specie-diagram-mouse" src="assets/images/mouse/mouse.png">
+      </div>
+    </div>
+  </div>
+</div>
+{{/add-class-on-scroll}}

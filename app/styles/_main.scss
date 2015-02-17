@@ -1,12 +1,5 @@
 $section-margin: golden-ratio(75px, -1);
 
-#main {
-  margin-left: $left-nav-size;
-  background-color: $base-body-color;
-  margin-bottom: 30px;
-  height: 100%;
-}
-
 #content {
   @include outer-container;
   margin-bottom: $section-margin;

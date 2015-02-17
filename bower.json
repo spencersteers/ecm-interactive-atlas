@@ -18,8 +18,7 @@
     "lodash": "~3.2.0",
     "ember-charts": "~0.3.0",
     "neat": "~1.7.1",
-    "font-awesome": "~4.3.0",
-    "pure": "~0.5.0"
+    "font-awesome": "~4.3.0"
   },
   "devDependencies": {
     "bourbon": "~4.2.0"

@@ -24,7 +24,7 @@ module.exports = function(environment) {
       'font-src': "'self' http://fonts.googleapis.com http://fonts.gstatic.com http://maxcdn.bootstrapcdn.com",
       'connect-src': "'self' http://ecmatlas.herokuapp.com http://0.0.0.0:5000 http://127.0.0.1:8000 https://*.firebaseio.com wss://*.firebaseio.com",
       'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://maxcdn.bootstrapcdn.com",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://yui.yahooapis.com http://fonts.googleapis.com http://maxcdn.bootstrapcdn.com",
       'media-src': "'self'"
     }
   };

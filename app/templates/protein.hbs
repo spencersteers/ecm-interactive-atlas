@@ -1,34 +1,69 @@
-<h1>{{proteinName}}</h1>
-
-<div class="row">
-  <div class="col-md-6">
-    <div class="row">
-      <div class="col-md-4">
-        Gene Name
-      </div>
-      <div class="col-md-8">
-        {{geneName}}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4">
-        Sequence
-      </div>
-      <div class="col-md-8">
-        {{sequence}}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4">
-        Average Tissue Weight Norm (All Tissues)
-      </div>
-      <div class="col-md-8">
-        {{averageTissueWeightNorms.all}}
-      </div>
-    </div>
+<div id="protein-detail" class="section scrollable-container">
+  <div class="section-header section-brand-light content-pad">
+    <h2>.</h2>
   </div>
-  <div class="col-md-6">
-    <h2>About</h2>
-    <p>Fusce eleifend odio a mauris molestie, non vehicula urna mollis. Suspendisse id sollicitudin urna. Nullam aliquet congue massa, sit amet porta libero rhoncus et. Quisque imperdiet, tortor vitae fermentum scelerisque, tellus turpis condimentum risus, at fringilla ex dolor at tellus. Aliquam leo tortor, tincidunt eget luctus id, volutpat in nisi. Proin porttitor bibendum diam, ut vulputate ligula lobortis non. Nullam sed pretium lorem. Quisque elementum quis ante in tincidunt. In blandit nisl consectetur sem pharetra, eget aliquam elit interdum.</p>
+  <div class="protein-detail-content scrollable-content">
+    <div class="content-pad-2x copy-container">
+      <section class="pure-g">
+        <div class="pure-u-1">
+          <h2>{{proteinName}}</h2>
+        </div>
+      </section>
+      <section class="pure-g">
+        <div class="pure-u-1-5">
+          <h3>About</h3>
+        </div>
+        <div class="pure-u-4-5">
+          <p>
+          Fusce eleifend odio a mauris molestie, non vehicula urna mollis. Suspendisse id sollicitudin urna. Nullam aliquet congue massa, sit amet porta libero rhoncus et.
+          </p>
+          <p>
+          Quisque imperdiet, tortor vitae fermentum scelerisque, tellus turpis condimentum risus, at fringilla ex dolor at tellus. Aliquam leo tortor, tincidunt eget luctus id, volutpat in nisi. Proin porttitor bibendum diam, ut vulputate ligula lobortis non. Nullam sed pretium lorem. Quisque elementum quis ante in tincidunt. In blandit nisl consectetur sem pharetra, eget aliquam elit interdum.
+          </p>
+        </div>
+      </section>
+      <section class="pure-g">
+        <div class="pure-u-1-5">
+          <h3>Details</h3>
+        </div>
+        <div class="pure-u-3-5">
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>Gene Name</th>
+                <td>{{geneName}}</td>
+              </tr>
+              <tr>
+                <th>Sequence</th>
+                <td>{{sequence}}</td>
+              </tr>
+              <tr>
+                <th>Family</th>
+                <td>{{familyName}}</td>
+              </tr>
+              <tr>
+                <th>Functional Group</th>
+                <td>{{functionalGroupName}}</td>
+              </tr>
+              <tr>
+                <th>Tissue Weight Norm </br><span class="text-muted">(All Tissues)<span></th>
+                <td>{{averageTissueWeightNorms.all}}</td>
+              </tr>
+              <tr>
+                <th>Found In</th>
+                <td>
+                  {{#each t in tissues}}
+                    {{#link-to 'explore.tissues.tissue' t class="table-link"}}
+                      {{t.name}}
+                    {{/link-to}}
+                  {{/each}}
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
   </div>
 </div>

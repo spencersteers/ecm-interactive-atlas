@@ -1,97 +1,96 @@
-{{partial 'atlas/header'}}
-
-<div class="container-fluid">
-  <div class="col-md-12">
-
-    <div class="card" style="margin-top:100px; padding:5px;">
-
-    <header>
-      Search
-    </header>
-    <section>
-      <form>
-        <div class="row">
-        <div class="col-md-4">
-        <div class="form-group">
-        {{input type=text class="form-control" value=searchName placeholder="Protein Name"}}
+<div id="search" class="section scrollable-container">
+  <div class="section-header section-brand-light content-pad">
+    <h2>.</h2>
+  </div>
+  <div class="protein-detail-content scrollable-content">
+    <div class="content-pad-2x copy-container">
+      <section class="pure-g">
+        <div class="pure-u-1">
+          <h2>Search</h2>
         </div>
+      </section>
+      <section class="pure-g">
+        <div class="pure-u-1">
+          <form class="pure-form pure-form-stacked">
+            <div class="pure-u-1-3">
+              <label for="proteinName">Protein Name</label>
+              {{input type=text class="form-control" id="proteinName" value=searchName}}
+            </div>
 
-          <div class="checkbox">
-            <label>
-              {{input type="checkbox" checked=searchSkin}}
-              Skin
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              {{input type="checkbox" checked=searchBone}}
-              Bone
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              {{input type="checkbox" checked=searchMuscle}}
-              Muscle
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              {{input type="checkbox" checked=searchTendon}}
-              Tendon
-            </label>
-          </div>
-      </div>
-      </div>
-      </form>
-    </section>
-    </div>
+            <div class="pure-u-1-3">
+              <label for="skin" class="pure-checkbox">
+                {{input id="skin" type="checkbox" checked=searchSkin}}
+                Skin
+              </label>
 
-    <div class="card" style="padding:5px;">
 
-    <header>
-      Results
-    </header>
-    <section>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <td>ProteinName</td>
-            <td>Sequence</td>
-            <td>Gene</td>
-            <td>Tissues</td>
-            <td>Family</td>
-            <td>Functional Group</td>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each protein in searchResults}}
-          <tr>
-            <td>
-              {{#link-to 'explore.protein' protein}}
-                {{protein.proteinName}}
-              {{/link-to}}
-            </td>
-            <td>{{protein.sequence}}</td>
-            <td>{{protein.geneName}}</td>
-            <td>
-              <ul>
-              {{#each tissue in protein.tissues}}
-                <li>
-                {{#link-to 'explore.tissue' tissue}}
-                  {{tissue.name}}
-                {{/link-to}}
-                </li>
+              <label for="bone" class="pure-checkbox">
+                {{input id="bone" type="checkbox" checked=searchBone}}
+                Bone
+              </label>
+
+
+              <label for="muscle" class="pure-checkbox">
+                {{input id="muscle" type="checkbox" checked=searchMuscle}}
+                Muscle
+              </label>
+
+
+              <label for="tendon" class="pure-checkbox">
+                {{input id="tendon" type="checkbox" checked=searchTendon}}
+                Tendon
+              </label>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="pure-g">
+        <div class="pure-u-1">
+          <h2>Results</h2>
+        </div>
+      </section>
+      <section class="pure-g">
+        <div class="pure-u-1">
+          <table class="pure-table pure-table-horizontal pure-table-striped table-full-width">
+            <thead>
+              <tr>
+                <td>ProteinName</td>
+                <td>Sequence</td>
+                <td>Gene</td>
+                <td>Tissues</td>
+                <td>Family</td>
+                <td>Functional Group</td>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each protein in searchResults}}
+              <tr>
+                <td>
+                  {{#link-to 'protein' protein}}
+                    {{protein.proteinName}}
+                  {{/link-to}}
+                </td>
+                <td>{{protein.sequence}}</td>
+                <td>{{protein.geneName}}</td>
+                <td>
+                  <ul>
+                  {{#each tissue in protein.tissues}}
+                    <li>
+                    {{#link-to 'explore.tissues.tissue' tissue}}
+                      {{tissue.name}}
+                    {{/link-to}}
+                    </li>
+                  {{/each}}
+                  </ul>
+                </td>
+                <td>{{protein.familyName}}</td>
+                <td>{{protein.functionalGroupName}}</td>
+              </tr>
               {{/each}}
-              </ul>
-            </td>
-            <td>{{protein.familyName}}</td>
-            <td>{{protein.functionalGroupName}}</td>
-          </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    </section>
-
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
   </div>
 </div>

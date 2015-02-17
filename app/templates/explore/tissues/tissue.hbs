@@ -1,0 +1,37 @@
+<div id="explore-tissues" class="section scrollable-container">
+  <div class="section-header section-brand-light content-pad">
+    <h2>{{selectedTissueDisplay}}</h2>
+  </div>
+  <div class="explore-tissues-content scrollable-content">
+    <div class="content-pad-2x">
+      <div class="explore-tissues-graph">
+        <div class="toggle-menu">
+          <div class="pure-menu pure-menu-horizontal">
+            <ul class="pure-menu-list">
+              <li class="pure-menu-item">
+                <a href="#" class="pure-menu-link active">
+                  <i class="fa fa-fw fa-bar-chart"></i>Tissue Weight Norms
+                </a>
+              </li>
+              <li class="pure-menu-item">
+                <a href="#" class="pure-menu-link">
+                  <i class="fa fa-fw fa-area-chart "></i>Relative Concentration
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="explore-tissues-graph-content">
+          {{horizontal-bar-chart data=tissueWeightNormData selectedSeedColor=seedColor.color}}
+        </div>
+      </div>
+      <div class="explore-tissues-list">
+        <div class="section-header section-header-content">
+          <h4>Proteins</h4>
+        </div>
+          {{protein-table routeName='explore.protein' proteins=proteins}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

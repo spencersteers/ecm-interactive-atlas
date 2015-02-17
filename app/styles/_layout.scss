@@ -1,0 +1,110 @@
+// $app-background: darken($ecm-green, 10%);
+// $max-app-width: 1440px;
+$nav-width: 160px;
+
+/*
+ * -- LAYOUT STYLES --
+ * This layout consists of three main elements, `#nav` (navigation bar), `#list` (email list), and `#main` (email content). All 3 elements are within `#layout`
+ */
+
+.section {
+  box-shadow: $section-content-shadow;
+}
+
+.app-wrapper {
+  position: relative;
+  top: 0;
+  height: 100%;
+}
+
+/* Make the navigation 100% width on phones */
+#nav {
+  position: relative;
+  background: $bg-gray;
+  min-height: 100%;
+  height: 100%;
+  width: $nav-width;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  z-index: 3;
+}
+
+.nav-inner {
+  display: block;
+}
+
+#nav {
+  > .section-header {
+    text-align: left;
+    border: none;
+  }
+  .section-header-content {
+    color: #777;
+    margin: 20px 0.5em 15px;
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+#main {
+  width: calc(100% - #{$nav-width});
+  float: right;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+
+
+
+.toggle-menu {
+  text-align: center;
+  font-size: 110%;
+  border-bottom: 1px solid $border-gray;
+
+  .pure-menu {
+    width: auto;
+  }
+  .pure-menu-item {
+    margin-right: 25px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  i {
+    margin-right: 4px;
+  }
+
+  a {
+    cursor: pointer;
+    padding: 10px 2px 12px;
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+    &.active {
+      color: $brand;
+    }
+  }
+}
+.toggle-menu-active-border {
+  a.active:after {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: '';
+    background: $brand;
+  }
+}

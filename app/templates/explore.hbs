@@ -1,9 +1,2 @@
-<div id="left-nav">
-  {{partial 'atlas/left-nav-menu'}}
-  <div style="margin: 0;">
-  {{tissues-diagram tissueList=tissues activeTissue=tissue}}
-  </div>
-</div>
-<div id="main">
-  {{outlet}}
-</div>
+{{specie-diagram tissueList=tissues activeTissue=tissue}}
+{{outlet}}

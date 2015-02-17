@@ -10,10 +10,15 @@ Router.map(function() {
     // this.resource('proteins', function() {
     //   this.resource('protein', { path: '/:protein_id' });
     // });
-    // this.resource('tissues');
-    this.route("tissue", { path: "/:tissue_id" });
-    this.route("protein", { path: "protein/:protein_id" });
+    this.resource("explore.tissues", { path: '/tissues'}, function() {
+      this.route("all", { path: "/" });
+      this.route("tissue", { path: "/:slug/:id" });
+    });
+
+    // this.route("all", { path: "tissue/all" });
+    // this.route("tissue", { path: "tissue/:tissue_name" });
   });
+  this.route("protein", { path: "protein/:protein_id" });
   this.resource('datasets', { path: "/datasets" });
   this.resource("dataset", { path: "/datasets/:dataset_id" });
 

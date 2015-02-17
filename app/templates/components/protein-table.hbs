@@ -1,0 +1,20 @@
+<table class="pure-table pure-table-horizontal protein-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Gene</th>
+      <th>Family</th>
+      <th>Group</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each protein in proteins}}
+      <tr>
+        <td>{{#link-to 'protein' protein}}{{protein.proteinName}}{{/link-to}}</td>
+        <td>{{protein.geneName}}</td>
+        <td>{{protein.familyName}}</td>
+        <td>{{protein.functionalGroupName}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

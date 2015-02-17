@@ -1,0 +1,38 @@
+// pure breakpoints
+// sm  @media screen and (min-width: 35.5em) ≥ 568px .pure-u-sm-*
+// md  @media screen and (min-width: 48em) ≥ 768px .pure-u-md-*
+// lg  @media screen and (min-width: 64em) ≥ 1024px  .pure-u-lg-*
+// xl  @media screen and (min-width: 80em) ≥ 1280px  .pure-u-xl-*
+
+$break-sm: 35.5em;
+$break-md: 48em;
+$break-lg: 64em;
+$break-xl: 80em;
+
+@mixin respond-to($media) {
+  @if $media == sm {
+    @media only screen and (min-width: $break-sm) { @content; }
+  }
+  @else if $media == md {
+    @media only screen and (min-width: $break-md) { @content; }
+  }
+  @else if $media == lg {
+    @media only screen and (min-width: $break-lg) { @content; }
+  }
+}
+
+
+$brand-dark: #388E3C;
+$brand: #43A047;
+$brand-light: #4CAF50;
+
+$border-gray: rgb(221, 221, 221);
+$text-color-muted: #777;
+$bg-light-gray: whitesmoke;
+$bg-gray: #ecf0f1;
+
+$content-padding-top: 15px;
+$content-margin-bottom: 15px;
+$content-padding: 1em;
+$section-head-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+$section-content-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
