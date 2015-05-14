@@ -17,7 +17,8 @@
     "d3": "3.3.9",
     "ember-charts": "0.4.0",
     "neat": "~1.7.1",
-    "font-awesome": "~4.3.0"
+    "font-awesome": "~4.3.0",
+    "pure": "~0.6.0"
   },
   "devDependencies": {
     "bourbon": "~4.2.0"

@@ -19,6 +19,8 @@ app.import('bower_components/d3/d3.js');
 app.import('bower_components/lodash/dist/lodash.min.js');
 app.import('bower_components/ember-charts/dist/ember-charts.js');
 app.import('bower_components/ember-charts/dist/ember-charts.css');
+app.import('bower_components/pure/pure-min.css');
+app.import('bower_components/pure/grids-responsive-min.css');
 
 app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf', {
   destDir: 'assets/fonts'
