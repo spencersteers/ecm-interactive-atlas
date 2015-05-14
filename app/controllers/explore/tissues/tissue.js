@@ -49,7 +49,7 @@ export default Ember.Controller.extend({
 
         _.forEach(arc, function (concentrations, key) {
           _.forEach(concentrations, function(c) {
-            if (!_.includes(tissueList, c.tissueState)) {
+            if (!_.include(tissueList, c.tissueState)) {
               tissueList.push(c.tissueState);
             }
             data.push({'tissue': c.tissueState, 'protein': protein.get('geneName'), 'value': c.average});
