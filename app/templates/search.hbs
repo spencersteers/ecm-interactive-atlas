@@ -1,6 +1,6 @@
 <div id="search" class="section scrollable-container">
-  <div class="section-header section-brand-light content-pad">
-    <h2>.</h2>
+  <div class="fixed-top section-header section-brand-light content-pad">
+    <h2></h2>
   </div>
   <div class="protein-detail-content scrollable-content">
     <div class="content-pad-2x copy-container">
@@ -57,7 +57,6 @@
                 <td>ProteinName</td>
                 <td>Sequence</td>
                 <td>Gene</td>
-                <td>Tissues</td>
                 <td>Family</td>
                 <td>Functional Group</td>
               </tr>
@@ -71,17 +70,10 @@
                   {{/link-to}}
                 </td>
                 <td>{{protein.sequence}}</td>
-                <td>{{protein.geneName}}</td>
                 <td>
-                  <ul>
-                  {{#each tissue in protein.tissues}}
-                    <li>
-                    {{#link-to 'explore.tissues.tissue' tissue}}
-                      {{tissue.name}}
-                    {{/link-to}}
-                    </li>
-                  {{/each}}
-                  </ul>
+                  {{#link-to 'protein' protein}}
+                    {{protein.geneName}}
+                  {{/link-to}}
                 </td>
                 <td>{{protein.familyName}}</td>
                 <td>{{protein.functionalGroupName}}</td>

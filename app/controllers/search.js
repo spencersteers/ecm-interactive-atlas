@@ -39,7 +39,7 @@ export default Ember.ArrayController.extend({
     var regexp = new RegExp(searchInput, "i");
     if(!searchInput || (searchInput && (0 === searchInput.length))) {
       return true;
-    } else if (-1 !== model.get('proteinName').search(regexp)) {
+    } else if (-1 !== model.get('geneName').search(regexp)) {
       return true;
     } else {
       return false;
@@ -48,6 +48,7 @@ export default Ember.ArrayController.extend({
 
   searchFilter: function() {
     this.set('searchResults',this.get('content').filter(this.filterItem.bind(this)));
+    console.log("searchFilter");
   }.observes("searchName"),
 
   observeSkin: function() {
