@@ -1,0 +1,106 @@
+{{!-- {{partial 'atlas/header'}}
+
+<div class="container-fluid">
+  <div class="col-md-12">
+    <div class="card" style="margin-top:100px; padding:5px;">
+
+    <header>
+      {{name}} - ({{formattedDate}})
+    </header>
+    <section>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td>PeptideSequence</td>
+            <td>Gene</td>
+            <td>MW</td>
+            <td>Protein</td>
+            <td>Functional</td>
+            <td>Family</td>
+            <td>Species</td>
+            <td>Tissue</td>
+            <td>TissueWeightNorm</td>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each item in datasetItems}}
+          <tr>
+            <td>{{item.peptideSequence}}</td>
+            <td>{{item.gene}}</td>
+            <td>{{item.molecularWeight}}</td>
+            <td>
+              {{#link-to 'protein' item.protein}}
+                {{item.protein.displayName}}
+              {{/link-to}}
+            </td>
+            <td>{{item.functionalGroupName}}</td>
+            <td>{{item.familyName}}</td>
+            <td>{{item.species}}</td>
+            <td>{{item.tissueName}}</td>
+            <td>{{item.tissueWeightNorm}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </section>
+
+    </div>
+  </div>
+</div> --}}
+
+
+<div id="datasets" class="section scrollable-container">
+  <div class="fixed-top section-header section-brand-light content-pad">
+    <h2></h2>
+  </div>
+  <div class="protein-detail-content scrollable-content">
+    <div class="content-pad-2x copy-container" style="max-width:100%;">
+      <section class="pure-g">
+        <div class="pure-u-1">
+          <h2>{{name}}</h2>
+        </div>
+      </section>
+      <section class="pure-g">
+        <div class="pure-u-1">
+
+        </div>
+      </section>
+      <section class="pure-g">
+        <div class="pure-u-1">
+          <table class="pure-table pure-table-horizontal pure-table-striped table-full-width" style="font-size:0.85em;">
+             <thead>
+              <tr>
+                <td>PeptideSequence</td>
+                <td>Gene</td>
+                <td>Protein</td>
+                <td>Functional</td>
+                <td>Family</td>
+                <td>Species</td>
+                <td>Tissue</td>
+                <td>TissueWeightNorm</td>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each item in datasetItems}}
+              <tr>
+                <td>{{item.peptideSequence}}</td>
+                <td>{{item.gene}}</td>
+                <td>
+                  {{#link-to 'protein' item.protein}}
+                    {{item.protein.displayName}}
+                  {{/link-to}}
+                </td>
+                <td>{{item.functionalGroupName}}</td>
+                <td>{{item.familyName}}</td>
+                <td>{{item.species}}</td>
+                <td>{{item.tissueName}}</td>
+                <td>{{item.tissueWeightNorm}}</td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

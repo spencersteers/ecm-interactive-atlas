@@ -34,6 +34,13 @@ p {
   display: table;
   clear: both;
 }
+a[disabled] {
+  cursor: not-allowed !important;
+  &:hover,
+  &:focus {
+    color: #777;
+  }
+}
 
 a {
   color: #4183c4;
@@ -101,6 +108,16 @@ a {
   overflow-y: auto;
   overflow-x: hidden;
   padding-top: $content-padding-top;
+  position: relative;
+  top: 55px;
+  left: 0;
+}
+
+.fixed-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 .content-pad {

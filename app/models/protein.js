@@ -9,8 +9,15 @@ export default DS.Model.extend({
   functionalGroupName: DS.attr('string'),
   slug: DS.attr('string'),
   averageTissueWeightNorms: DS.attr('json'),
+  averageRelativeConcentrations: DS.attr('json'),
+  externalReference: DS.attr('json'),
 
   isFoundInTissue: function(tissue) {
     return this.get('tissues').filterBy('name', tissue).length > 0;
   },
+
+  displayName: function() {
+    return this.get('proteinName') ? this.get('proteinName') : this.get('geneName');
+  }.property('proteinName', 'geneName')
+
 });

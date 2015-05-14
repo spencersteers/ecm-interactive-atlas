@@ -166,3 +166,12 @@ $specie-diagram-width: 400px;
 .protein-protein-name {
 
 }
+
+
+.explore-tissues-graph-content {
+  width: 100%;
+  overflow-x: auto;
+  &.hide {
+    display: none;
+  }
+}

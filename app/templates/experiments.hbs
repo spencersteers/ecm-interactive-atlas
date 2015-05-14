@@ -1,12 +1,12 @@
 <div id="datasets" class="section scrollable-container">
-  <div class="section-header section-brand-light content-pad">
-    <h2>.</h2>
+  <div class="fixed-top section-header section-brand-light content-pad">
+    <h2></h2>
   </div>
   <div class="protein-detail-content scrollable-content">
     <div class="content-pad-2x copy-container">
       <section class="pure-g">
         <div class="pure-u-1">
-          <h2>Datasets</h2>
+          <h2>Experiments</h2>
         </div>
       </section>
       <section class="pure-g">
@@ -20,11 +20,11 @@
               </tr>
             </thead>
             <tbody>
-            {{#each set in content itemController="dataset"}}
+            {{#each set in content itemController="experiment"}}
               <tr>
                 <td>{{set.id}}</td>
                 <td>
-                  {{#link-to 'dataset' set.id}}
+                  {{#link-to 'experiment' set.id}}
                     {{set.name}}
                   {{/link-to}}
                 </td>

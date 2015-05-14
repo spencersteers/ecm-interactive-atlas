@@ -93,7 +93,7 @@ $nav-width: 160px;
       background-color: transparent;
     }
     &.active {
-      color: $brand;
+      color: $brand-blue;
     }
   }
 }
@@ -105,6 +105,13 @@ $nav-width: 160px;
     width: 100%;
     height: 1px;
     content: '';
-    background: $brand;
+    background: $brand-blue;
+  }
+}
+
+.protein-detail-content-found-in {
+  a {
+    width: 50%;
+    float: left;
   }
 }

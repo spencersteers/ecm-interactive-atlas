@@ -9,20 +9,30 @@
           <div class="pure-menu pure-menu-horizontal">
             <ul class="pure-menu-list">
               <li class="pure-menu-item">
-                <a href="#" class="pure-menu-link active">
+                <a {{action "toggleDisplay" on="click"}} {{bind-attr class="showTissueWeightNorms:active :pure-menu-link"}} {{bind-attr disabled="isTissueWeightNormsDisabled"}}>
                   <i class="fa fa-fw fa-bar-chart"></i>Tissue Weight Norms
                 </a>
               </li>
               <li class="pure-menu-item">
-                <a href="#" class="pure-menu-link">
+                <a {{action "toggleDisplay" on="click"}} {{bind-attr class="showTissueWeightNorms::active :pure-menu-link"}}>
                   <i class="fa fa-fw fa-area-chart "></i>Relative Concentration
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="explore-tissues-graph-content">
-          {{horizontal-bar-chart data=tissueWeightNormData selectedSeedColor=seedColor.color}}
+        <div {{bind-attr class="showTissueWeightNorms::hide :explore-tissues-graph-content"}}>
+          {{#if showTissueWeightNorms}}
+            <div {{bind-attr style="chartWidthStyle"}}>
+              {{vertical-bar-chart data=tissueWeightNormData selectedSeedColor=seedColor.color}}
+            </div>
+          {{/if}}
+        </div>
+        <div {{bind-attr class="showTissueWeightNorms:hide :explore-tissues-graph-content"}}>
+          {{#if showRelativeConcentrations}}
+            {{relative-concentrations-chart data=averageRelativeConcentrationsChart.data 
+            proteins=averageRelativeConcentrationsChart.proteins tissues=averageRelativeConcentrationsChart.tissues}}
+          {{/if}}
         </div>
       </div>
       <div class="explore-tissues-list">

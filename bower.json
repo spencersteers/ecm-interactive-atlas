@@ -14,11 +14,11 @@
     "ember-qunit-notifications": "0.0.7",
     "qunit": "~1.17.1",
     "moment": "~2.9.0",
-    "d3": "~3.5.5",
-    "lodash": "~3.2.0",
-    "ember-charts": "~0.3.0",
+    "d3": "3.3.9",
+    "ember-charts": "0.4.0",
     "neat": "~1.7.1",
-    "font-awesome": "~4.3.0"
+    "font-awesome": "~4.3.0",
+    "lodash": "~3.8.0"
   },
   "devDependencies": {
     "bourbon": "~4.2.0"

@@ -19,8 +19,8 @@ Router.map(function() {
     // this.route("tissue", { path: "tissue/:tissue_name" });
   });
   this.route("protein", { path: "protein/:protein_id" });
-  this.resource('datasets', { path: "/datasets" });
-  this.resource("dataset", { path: "/datasets/:dataset_id" });
+  this.resource('experiments', { path: "/experiments" });
+  this.resource("experiment", { path: "/experiments/:experiment_id" });
 
 
   this.route("about", { path: "/about" });

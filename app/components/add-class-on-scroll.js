@@ -1,5 +1,7 @@
 import Ember from "ember";
 
+var $ = Ember.$;
+
 export default Ember.Component.extend({
   classNames: ['ember-view'],
   classNameBindings: ['isScrolled'],
@@ -7,7 +9,7 @@ export default Ember.Component.extend({
 
   didInsertElement: function() {
     var view = this;
-     this.$(this.scrollableSelector).bind("scroll", function() {
+     $(this.scrollableSelector).bind("scroll", function() {
       view.didScroll();
     });
   },

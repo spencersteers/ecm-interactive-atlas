@@ -11,7 +11,7 @@
     {{#each protein in proteins}}
       <tr>
         <td>{{#link-to 'protein' protein}}{{protein.proteinName}}{{/link-to}}</td>
-        <td>{{protein.geneName}}</td>
+        <td>{{#link-to 'protein' protein}}{{protein.geneName}}{{/link-to}}</td>
         <td>{{protein.familyName}}</td>
         <td>{{protein.functionalGroupName}}</td>
       </tr>
