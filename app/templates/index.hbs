@@ -1,6 +1,5 @@
-{{!-- {{partial 'atlas/header'}} --}}
 <div class="section scrollable-container">
-  <div class="section-header section-brand-light content-pad">
+  <div class="fixed-top section-header section-brand-light content-pad">
     <h2></h2>
   </div>
    <div class="scrollable-content">
@@ -13,6 +12,48 @@
       <section class="pure-g">
         <div class="pure-u-1">
           <p>Providing an interactive look into the world of extracellular matrix proteins. </p>
+        </div>
+      </section>
+      <section class="pure-g">
+        <div class="pure-u-1">
+          <h2>Latest</h2>
+        </div>
+      </section>
+      <section class="pure-g">
+        <div class="pure-u-3-5">
+          <h3>{{#link-to 'protein' protein}}{{protein.proteinName}}{{/link-to}}</h3>
+          </br>
+          {{{unbound shortSummary}}}
+        </div>
+        <div class="pure-u-2-5" >
+          <div style="padding:1em;background:whitesmoke;border-radius:3px;">
+            <h3>Experiment<h3>
+            </br>
+            <h3>{{#link-to 'experiment' experiment}}{{experiment.name}}{{/link-to}}</h3>
+            <table class="table">
+              <tbody>
+               <tr>
+                  <th>Species</th>
+                  <td>{{experiment.species}}</td>
+                </tr>
+                <tr>
+                  <th>Date</th>
+                  <td>{{experiment.acquisitionDate}}</td>
+                </tr>
+                <tr>
+                  <th>Instrument</th>
+                  <td>{{experiment.acquisitionInstrument}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="{{unbound experiment.publication}}">{{experiment.publication}}</a>
+          </div>
+        </div>
+      </section>
+      <section class="pure-g">
+        <div class="pure-u-2-3">
+          <h4><strong>Tissue Weight Norms</strong></h4>
+          {{vertical-bar-chart data=tissueWeightNormData selectedSeedColor=seedColor.color height=300}}
         </div>
       </section>
     </div>

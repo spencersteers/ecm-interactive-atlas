@@ -9,6 +9,7 @@
           <h2>{{displayName}}</h2>
         </div>
       </section>
+      {{#if externalReference}}
       <section class="pure-g">
         <div class="pure-u-1-5">
           <h3>About</h3>
@@ -16,11 +17,9 @@
         <div class="pure-u-4-5">
           {{{externalReference.wikipediaSummary}}}
           <a href="{{unbound externalReference.wikipediaUrl}}"><em>From Wikipedia</em></a>
-          {{#if externalReference.uniprotUrl}}
-            
-          {{/if}}
         </div>
       </section>
+      {{/if}}
       <section class="pure-g">
         <div class="pure-u-1-5">
           <h3>Details</h3>
