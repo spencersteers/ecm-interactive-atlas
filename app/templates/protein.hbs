@@ -16,6 +16,9 @@
         <div class="pure-u-4-5">
           {{{externalReference.wikipediaSummary}}}
           <a href="{{unbound externalReference.wikipediaUrl}}"><em>From Wikipedia</em></a>
+          {{#if externalReference.uniprotUrl}}
+            
+          {{/if}}
         </div>
       </section>
       <section class="pure-g">
@@ -25,6 +28,12 @@
         <div class="pure-u-3-5">
           <table class="table">
             <tbody>
+              {{#if externalReference.uniprotUrl}}
+              <tr>
+                <th><a href="{{unbound externalReference.uniprotUrl}}">Uniprot</a></th>
+                <td>{{externalReference.uniprotId}}</td>
+              </tr>
+              {{/if}}
               <tr>
                 <th>Gene Name</th>
                 <td>{{geneName}}</td>
