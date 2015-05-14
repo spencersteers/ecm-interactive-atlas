@@ -16,7 +16,7 @@ var app = new EmberApp({
 // output files.
 app.import('bower_components/moment/min/moment.min.js');
 app.import('bower_components/d3/d3.js');
-app.import('bower_components/lodash/lodash.min.js');
+app.import('bower_components/lodash/dist/lodash.min.js');
 app.import('bower_components/ember-charts/dist/ember-charts.js');
 app.import('bower_components/ember-charts/dist/ember-charts.css');
 
