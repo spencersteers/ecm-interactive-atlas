@@ -41,7 +41,6 @@ export default Ember.Controller.extend({
       return !_.isEmpty(p.get('averageRelativeConcentrations'));
     });
 
-    console.log(proteins.get('length'));
     proteins.forEach(function(protein) {
       if (st === 'all') {
         proteinList.push(protein.get('geneName'));
