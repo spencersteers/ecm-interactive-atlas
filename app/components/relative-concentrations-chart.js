@@ -8,9 +8,8 @@ export default Ember.Component.extend({
     var proteins = this.get('proteins');
     var minwidth = 500;
     var minheight = 0;
-    // console.log(this.get('data'));
     var margin = { top: 200, right: 100, bottom: 100, left: 225 };
-    var gridSize = 63;
+    var gridSize = 50;
     var legendElementWidth = gridSize;
     var colors = ["#ece7f2","#d0d1e6","#a6bddb","#74a9cf","#3690c0","#0570b0","#045a8d","#045a8d"];
 

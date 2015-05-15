@@ -22,17 +22,13 @@
           </div>
         </div>
         <div {{bind-attr class="showTissueWeightNorms::hide :explore-tissues-graph-content"}}>
-          {{#if showTissueWeightNorms}}
-            <div {{bind-attr style="chartWidthStyle"}}>
-              {{vertical-bar-chart data=tissueWeightNormData selectedSeedColor=seedColor.color}}
-            </div>
-          {{/if}}
+          <div {{bind-attr style="chartWidthStyle"}}>
+            {{vertical-bar-chart data=tissueWeightNormData selectedSeedColor=seedColor.color}}
+          </div>
         </div>
         <div {{bind-attr class="showTissueWeightNorms:hide :explore-tissues-graph-content"}}>
-          {{#if showRelativeConcentrations}}
-            {{relative-concentrations-chart data=averageRelativeConcentrationsChart.data 
+          {{relative-concentrations-chart data=averageRelativeConcentrationsChart.data 
             proteins=averageRelativeConcentrationsChart.proteins tissues=averageRelativeConcentrationsChart.tissues}}
-          {{/if}}
         </div>
       </div>
       <div class="explore-tissues-list">
